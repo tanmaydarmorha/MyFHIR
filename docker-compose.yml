@@ -1,0 +1,8 @@
+services:
+  my-fhir-via-compose:
+    build:
+      context: .
+      dockerfile: .
+    image: my-fhir
+    ports:
+      - '8080:8080'
