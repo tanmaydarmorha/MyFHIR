@@ -20,13 +20,12 @@ public class FhirController {
 
     private static final String FHIR_SERVER_BASE_URL = "https://hapi.fhir.org/baseR4";
 
-    private final FhirContext fhirContext = FhirContext.forR4();
-
     private final IGenericClient client;
 
     private final IParser jsonParser;
 
     public FhirController() {
+        FhirContext fhirContext = FhirContext.forR4();
         client = fhirContext.newRestfulGenericClient(FHIR_SERVER_BASE_URL);
         jsonParser = fhirContext.newJsonParser();
     }
