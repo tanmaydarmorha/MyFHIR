@@ -51,4 +51,17 @@ public class FhirController {
         }
         return returnItem;
     }
+
+    @GetMapping(value = "/searchForCoverages", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String searchForCoverages() {
+        Bundle returnItem;
+
+        returnItem = client
+                .search()
+                .forResource(Coverage.class)
+                .returnBundle(Bundle.class)
+                .execute();
+
+        return jsonParser.encodeResourceToString(returnItem);
+    }
 }
