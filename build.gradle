@@ -1,12 +1,12 @@
 plugins {
     id 'org.springframework.boot' version '2.6.3'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'io.spring.dependency-management' version '1.1.4'
     id 'java'
 }
 
 group = 'com.robowarrior'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+version = 'learning-docker'
+sourceCompatibility = '17'
 
 configurations {
     compileOnly {
@@ -15,17 +15,19 @@ configurations {
 }
 
 ext {
-    springBootVersion = '2.6.4'
+    springBootVersion = '3.2.2'
 
-    slf4jVersion = "1.7.36"
+    slf4jVersion = '1.7.36'
 
-    hapiFhirVersion = "5.6.2"
+    hapiFhirVersion = '6.10.2'
 
-    junitVersion = "4.12"
+    junitVersion = '4.12'
 
-    mockitoVersion = "4.4.0"
+    mockitoVersion = '4.4.0'
 
-    lombokVersion = "1.18.22"
+    lombokVersion = '1.18.22'
+
+    jacksonVersion = '2.16.1'
 }
 
 repositories {
@@ -41,6 +43,9 @@ dependencies {
     implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-client', version: hapiFhirVersion
 
     implementation group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jacksonVersion
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: jacksonVersion
 
     compileOnly group: 'org.projectlombok', name: 'lombok', version: lombokVersion
     annotationProcessor group: 'org.projectlombok', name: 'lombok', version: lombokVersion
